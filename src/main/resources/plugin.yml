@@ -1,0 +1,113 @@
+name: AAC
+version: 3.5.0
+main: me.konsolas.aac.AAC
+author: konsolas
+description: Powerful anti-cheat solution for Spigot servers.
+website: https://www.spigotmc.org/resources/6442/
+depend: [ProtocolLib]
+commands:
+   aac:
+      description: Display version information
+      usage: /<command>
+      permission: AAC.version
+      permission-message: AAC / You do not have permission to perform that command.
+   aacunban:
+      description: Unban a player
+      usage: /<command> [player]
+      permission: AAC.unban
+      permission-message: AAC / You do not have permission to perform that command.
+   aacadmin:
+      description: Open a GUI with options to manage AAC
+      usage: /<command>
+      permission: AAC.admin
+      permission-message: AAC / You do not have permission to perform that command.
+   aackick:
+      description: Kill and kick a player, broadcasting this.
+      usage: /<command> [player] [reason]
+      permission: AAC.kick
+      permission-message: AAC / You do not have permission to perform that command.
+   aacban:
+      description: Ban a player with AAC's ban system.
+      usage: /<command> [player]
+      permission: AAC.ban
+      permission-message: AAC / You do not have permission to perform that command.
+   aacreload:
+      description: Text based reload
+      usage: /<command>
+      permission: AAC.admin
+      permission-message: AAC / You do not have permission to perform that command.
+   aacdebug:
+      description: Save a file with detailed information on a player
+      usage: /<command> [player]
+      permission: AAC.debug
+      permission-message: AAC / You do not have permission to perform that command.
+   aacverbose:
+      description: Toggle verbose output
+      usage: /<command>
+      permission: AAC.verbose
+      permission-message: AAC / You do not have permission to perform that command.
+   aacmessage:
+      description: Send a message to the player from AAC
+      usage: /<command> [player] [message]
+      permission: AAC.message
+      permission-message: AAC / You do not have permission to perform that command.
+   aacstaffnotify:
+      description: Send a message to all members of staff
+      usage: /<command> [message]
+      permission: AAC.notify
+      permission-message: AAC / You do not have permission to perform that command.
+   aacrestorechunk:
+      description: Resend the chunk data for the chunk that the player is standing on, removing fake blocks created by plugins.
+      usage: /<command> [player]
+      permission: AAC.restorechunk
+      permission-message: AAC / You do not have permission to perform that command.
+permissions:
+   AAC.*:
+      description: Gives access to all AAC permissions.
+      children:
+         AAC.version: true
+         AAC.admin: true
+         AAC.manage: true
+         AAC.unban: true
+         AAC.kick: true
+         AAC.bypass: true
+         AAC.debug: true
+         AAC.message: true
+         AAC.notify: true
+         AAC.restorechunk: true
+   AAC.version:
+      description: Display version information
+      default: true
+   AAC.unban:
+      description: Unban a player
+      default: op
+   AAC.kick:
+      description: Kill and kick a player
+      default: op
+   AAC.ban:
+      description: Ban a player
+      default: op
+   AAC.bypass:
+      description: Be exempt from AAC hacking checks
+      default: op
+   AAC.admin:
+      description: Open a GUI to access lists of violations.
+      default: op
+   AAC.manage:
+      description: Enable/disable checks or reload AAC via the GUI.
+      default: op
+   AAC.debug:
+      description: Save a file with detailed information on a player
+      default: op
+   AAC.verbose:
+      description: View AAC's debug messages.
+      default: false
+   AAC.message:
+      description: Send a message to players from AAC
+      default: op
+   AAC.notify:
+      description: Send and recieve messages to all staff
+      default: op
+   AAC.restorechunk:
+      description: Resend the chunk data for the chunk that the player is standing on, removing fake blocks created by plugins
+      default: op
